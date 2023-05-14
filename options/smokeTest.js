@@ -1,5 +1,11 @@
 export const smokeTest = {
-  vus: 1,
-  duration: '1s',
-  httpdebug: 'true',
+  discardResponseBodies: true,
+  scenarios: {
+    contacts: {
+      executor: 'shared-iterations',
+      vus: 1,
+      iterations: 1,
+      maxDuration: '30s',
+    },
+  },
 };
