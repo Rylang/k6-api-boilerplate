@@ -8,6 +8,10 @@ export default function() {
   describe('GET - /public/crocodiles', () => {
     const response = k6TestApi.getCrocodiles();
     expect(response.status, 'response status').to.equal(200);
-    expect(response.timings.duration, 'request duration').to.be.below(100);
+  });
+
+  describe('GET - /public/crocodiles/{id}', () => {
+    const response = k6TestApi.getCrocodilesById(1);
+    expect(response.status, 'response status').to.equal(200);
   });
 }

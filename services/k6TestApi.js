@@ -11,4 +11,13 @@ export const k6TestApi = {
       `${baseUrl}/public/crocodiles/`,
     );
   },
+  /**
+   * @description GET https://test-api.k6.io/public/crocodiles/{id}
+   * @param {Number} id The ID of the crocodile to fetch
+  */
+  getCrocodilesById(id) {
+    return http.get(
+      `${baseUrl}/public/crocodiles/${id}`,
+    );
+  },
 }
